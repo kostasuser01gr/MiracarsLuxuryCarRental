@@ -1,0 +1,102 @@
+{
+  "common": {
+    "app_name": "Mira Cars",
+    "tagline": "Ενοικίαση Πολυτελών Αυτοκινήτων στην Ελλάδα",
+    "view_fleet": "Δείτε τον Στόλο",
+    "book_now": "Κράτηση Τώρα",
+    "unavailable": "Μη Διαθέσιμο",
+    "available": "Διαθέσιμο",
+    "featured": "Προτεινόμενο",
+    "per_day": "/ημέρα",
+    "seats": "θέσεις",
+    "loading": "Φόρτωση...",
+    "error": "Σφάλμα",
+    "currency": "€"
+  },
+  "nav": {
+    "home": "Αρχική",
+    "fleet": "Στόλος",
+    "about": "Σχετικά",
+    "contact": "Επικοινωνία",
+    "booking": "Κράτηση",
+    "account": "Λογαριασμός",
+    "admin": "Διαχείριση",
+    "login": "Σύνδεση",
+    "logout": "Αποσύνδεση"
+  },
+  "home": {
+    "title": "Ενοικίαση Πολυτελών Αυτοκινήτων στην Ελλάδα",
+    "subtitle": "Απολαύστε την καλύτερη συλλογή πολυτελών και εξωτικών οχημάτων",
+    "features": {
+      "premium_fleet": {
+        "title": "Πρέμιουμ Στόλος",
+        "description": "Εξωτικά και πολυτελή οχήματα από κορυφαίες μάρκες"
+      },
+      "support": {
+        "title": "Υποστήριξη 24/7",
+        "description": "Πάντα εδώ για να σας βοηθήσουμε"
+      },
+      "best_rates": {
+        "title": "Καλύτερες Τιμές",
+        "description": "Ανταγωνιστικές τιμές με εποχιακές προσφορές"
+      }
+    }
+  },
+  "fleet": {
+    "title": "Ο Στόλος μας",
+    "filters": {
+      "all": "Όλα",
+      "category": "Κατηγορία",
+      "transmission": "Κιβώτιο",
+      "seats": "Θέσεις",
+      "price": "Τιμή"
+    },
+    "categories": {
+      "exotic": "Εξωτικά",
+      "luxury_sedan": "Πολυτελής Sedan",
+      "sports_car": "Σπορ",
+      "suv": "SUV"
+    },
+    "transmission_types": {
+      "automatic": "Αυτόματο",
+      "manual": "Χειροκίνητο"
+    }
+  },
+  "booking": {
+    "title": "Κράτηση Οχήματος",
+    "steps": {
+      "dates": "Ημερομηνίες",
+      "extras": "Επιπλέον",
+      "details": "Στοιχεία",
+      "review": "Επισκόπηση",
+      "payment": "Πληρωμή"
+    },
+    "date_selection": {
+      "pickup": "Παραλαβή",
+      "return": "Επιστροφή",
+      "select_dates": "Επιλέξτε ημερομηνίες"
+    },
+    "driver_info": {
+      "full_name": "Ονοματεπώνυμο",
+      "email": "Email",
+      "phone": "Τηλέφωνο",
+      "license_number": "Αριθμός Διπλώματος"
+    },
+    "price_breakdown": {
+      "daily_rate": "Ημερήσια Τιμή",
+      "days": "Ημέρες",
+      "subtotal": "Υποσύνολο",
+      "discount": "Έκπτωση",
+      "tax": "ΦΠΑ (24%)",
+      "total": "Σύνολο"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Mira Cars. Με επιφύλαξη παντός δικαιώματος.",
+    "legal": {
+      "terms": "Όροι Χρήσης",
+      "privacy": "Πολιτική Απορρήτου",
+      "rental_policy": "Πολιτική Ενοικίασης"
+    }
+  }
+}
