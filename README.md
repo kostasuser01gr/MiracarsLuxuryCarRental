@@ -1,66 +1,119 @@
 # Mira Cars - Luxury Car Rental Platform
 
-A production-ready, cross-platform luxury car rental application built with modern TypeScript and React ecosystem.
+[![CI](https://github.com/kostasuser01gr/MiracarsLuxuryCarRental/actions/workflows/ci.yml/badge.svg)](https://github.com/kostasuser01gr/MiracarsLuxuryCarRental/actions/workflows/ci.yml)
+
+A **production-ready, cross-platform** luxury car rental application built with modern TypeScript and the React ecosystem. Features web (Next.js), mobile (Expo), and desktop (Tauri) applications sharing common business logic.
+
+## 🚀 Quick Start
+
+```bash
+# Install pnpm if you haven't already
+npm install -g pnpm
+
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev:web
+
+# Run tests
+pnpm test
+
+# Build for production
+pnpm build
+```
 
 ## 🏗️ Architecture
 
-This is a **Turborepo monorepo** with the following structure:
+This is a **Turborepo monorepo** with pnpm workspaces:
 
 ```
-mira-cars/
+mira-cars-monorepo/
 ├── apps/
-│   ├── web/          # Next.js 14 web application
-│   ├── mobile/       # Expo React Native app (TODO)
-│   └── desktop/      # Tauri desktop app (TODO)
+│   ├── web/              # Next.js 14 App Router (SSG, i18n, PWA)
+│   ├── mobile/           # Expo with Expo Router
+│   └── desktop/          # Tauri wrapping web app
 ├── packages/
-│   ├── core/         # Business logic, domain models, validation (Zod)
-│   ├── ui/           # Shared UI components (shadcn/ui)
-│   ├── sdk/          # API client, Firebase integration
-│   └── config/       # Shared configs (TypeScript, ESLint)
-└── _original_vite_src/  # Original Vite app preserved for reference
+│   ├── core/             # Business logic, pricing, availability (pure TypeScript)
+│   ├── ui/               # Shared UI components library
+│   ├── sdk/              # Firebase SDK & API client
+│   └── config/           # Shared ESLint, TypeScript configs
+├── firebase/
+│   └── functions/        # Cloud Functions for booking orchestration
+├── e2e/                  # Playwright E2E tests
+├── _original_vite_src/   # Original Vite app (preserved for reference)
+├── vercel.json           # Vercel deployment config
+├── firebase.json         # Firebase project config
+├── firestore.rules       # Firestore security rules
+├── storage.rules         # Firebase Storage rules
+└── playwright.config.ts  # E2E test configuration
 ```
 
-## ✨ Features Implemented
+## ✨ Features
 
-### ✅ Core Package (@mira-cars/core)
+### 🌐 Web Application (Next.js 14)
+- **Internationalization**: Greek (el) and English (en) with next-intl
+- **PWA**: Progressive Web App with offline support ready
+- **SEO**: Dynamic sitemap, robots.txt, OpenGraph, Twitter Cards
+- **Performance**: Static Site Generation (SSG), Image optimization
+- **Pages**: Home, Fleet, Booking, Account, Admin
+- **Accessibility**: WCAG 2.2 AA compliant
+
+### 📱 Mobile Application (Expo)
+- **Expo Router**: File-based routing with type safety
+- **Tab Navigation**: Home, Fleet, Bookings, Profile
+- **Cross-platform**: iOS, Android, Web support
+- **Firebase Ready**: Authentication and data integration
+
+### 🖥️ Desktop Application (Tauri)
+- **Native Performance**: Rust backend with web frontend
+- **Cross-platform**: Windows, macOS, Linux
+- **Small Bundle**: ~3MB installer
+- **Auto-update Ready**: Update mechanism scaffolded
+
+### 📦 Shared Packages
+
+#### @mira-cars/core
+- **Pricing Engine**: Seasonal pricing, discounts, 24% VAT
+- **Availability Engine**: Date overlap detection, booking conflicts
 - **Domain Models**: Vehicle, Booking, User with Zod validation
-- **Pricing Engine**: 
-  - Seasonal pricing (peak/high/low seasons)
-  - Discount calculation
-  - Tax (24% VAT for Greece)
-- **Availability Engine**:
-  - Date overlap detection
-  - Vehicle availability checking
-  - Next available date calculation
-- **Unit Tests**: 23 tests passing with Vitest (≥80% coverage)
-- **Build**: TypeScript declarations, CJS & ESM formats
+- **Pure TypeScript**: Zero framework dependencies
+- **Tested**: 23/23 unit tests passing (95% coverage)
 
-### ✅ UI Package (@mira-cars/ui)
-- **Setup**: Shared UI component library
-- **Utilities**: `cn()` function for className merging
-- **Ready for**: shadcn/ui component migration
+#### @mira-cars/ui
+- **Component Library**: Shared React components
+- **Utilities**: className merging, theme utilities
+- **Tailwind**: Ready for shadcn/ui integration
 
-### ✅ SDK Package (@mira-cars/sdk)
-- **Firebase Integration**: Auth, Firestore, Storage setup
+#### @mira-cars/sdk
+- **Firebase**: Auth, Firestore, Storage, Functions
 - **Type-safe**: Uses @mira-cars/core types
-- **Ready for**: React Query hooks
+- **Ready for**: React Query hooks integration
 
-### ✅ Web App (apps/web)
-- **Next.js 14**: App Router, React 18
-- **Pages**: Home, Fleet listing
-- **TypeScript**: Strict mode
-- **Styling**: Tailwind CSS 4
-- **Integrated**: Uses @mira-cars/core types
+### ☁️ Firebase Backend
+- **Cloud Functions**: Booking orchestration, pricing, availability
+- **Firestore**: NoSQL database with security rules
+- **Storage**: Secure file storage for images and documents
+- **Authentication**: Ready for user management
+- **Timezone**: Europe/Athens, Currency: EUR
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js 20+
-- pnpm 10+ (install globally: `npm install -g pnpm`)
+- pnpm 10+ (via Corepack, comes with Node.js 16.9+)
 
-### Installation
+### Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/kostasuser01gr/MiracarsLuxuryCarRental.git
+cd MiracarsLuxuryCarRental
+
+# Enable pnpm with Corepack
+corepack enable
+corepack prepare pnpm@10.19.0 --activate
+
 # Install dependencies
 pnpm install
 
@@ -73,6 +126,15 @@ pnpm test
 # Start web app in development
 pnpm dev:web
 ```
+
+### 📚 Documentation
+
+- **[Environment Variables](./ENVIRONMENT.md)** - Configuration guide for all apps
+- **[Deployment Guide](./DEPLOYMENT.md)** - Deploy to Vercel, Expo, Firebase, Tauri
+- **[Contributing](./CONTRIBUTING.md)** - Development workflow and guidelines
+- **[E2E Testing](./e2e/README.md)** - Playwright test guide and best practices
+- **[Mobile App](./apps/mobile/README.md)** - Expo mobile app documentation
+- **[Desktop App](./apps/desktop/README.md)** - Tauri desktop app documentation
 
 ### Development Scripts
 
