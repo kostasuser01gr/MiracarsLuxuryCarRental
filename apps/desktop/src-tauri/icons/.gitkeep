@@ -1,0 +1,3 @@
+# Placeholder for Tauri icons
+# Generate icons using: pnpm tauri icon <path-to-icon.png>
+# Required: 32x32.png, 128x128.png, icon.icns, icon.ico

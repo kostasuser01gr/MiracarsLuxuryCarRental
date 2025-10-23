@@ -1,0 +1,102 @@
+{
+  "common": {
+    "app_name": "Mira Cars",
+    "tagline": "Luxury Car Rental in Greece",
+    "view_fleet": "View Fleet",
+    "book_now": "Book Now",
+    "unavailable": "Unavailable",
+    "available": "Available",
+    "featured": "Featured",
+    "per_day": "/day",
+    "seats": "seats",
+    "loading": "Loading...",
+    "error": "Error",
+    "currency": "€"
+  },
+  "nav": {
+    "home": "Home",
+    "fleet": "Fleet",
+    "about": "About",
+    "contact": "Contact",
+    "booking": "Booking",
+    "account": "Account",
+    "admin": "Admin",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "home": {
+    "title": "Luxury Car Rental in Greece",
+    "subtitle": "Experience the finest collection of luxury and exotic vehicles",
+    "features": {
+      "premium_fleet": {
+        "title": "Premium Fleet",
+        "description": "Exotic and luxury vehicles from top brands"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Always here to assist you"
+      },
+      "best_rates": {
+        "title": "Best Rates",
+        "description": "Competitive pricing with seasonal offers"
+      }
+    }
+  },
+  "fleet": {
+    "title": "Our Fleet",
+    "filters": {
+      "all": "All",
+      "category": "Category",
+      "transmission": "Transmission",
+      "seats": "Seats",
+      "price": "Price"
+    },
+    "categories": {
+      "exotic": "Exotic",
+      "luxury_sedan": "Luxury Sedan",
+      "sports_car": "Sports Car",
+      "suv": "SUV"
+    },
+    "transmission_types": {
+      "automatic": "Automatic",
+      "manual": "Manual"
+    }
+  },
+  "booking": {
+    "title": "Book Vehicle",
+    "steps": {
+      "dates": "Dates",
+      "extras": "Extras",
+      "details": "Details",
+      "review": "Review",
+      "payment": "Payment"
+    },
+    "date_selection": {
+      "pickup": "Pickup",
+      "return": "Return",
+      "select_dates": "Select dates"
+    },
+    "driver_info": {
+      "full_name": "Full Name",
+      "email": "Email",
+      "phone": "Phone",
+      "license_number": "License Number"
+    },
+    "price_breakdown": {
+      "daily_rate": "Daily Rate",
+      "days": "Days",
+      "subtotal": "Subtotal",
+      "discount": "Discount",
+      "tax": "Tax (24% VAT)",
+      "total": "Total"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Mira Cars. All rights reserved.",
+    "legal": {
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy",
+      "rental_policy": "Rental Policy"
+    }
+  }
+}
