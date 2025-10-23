@@ -1,0 +1,51 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && 
+             firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    function isStaff() {
+      return isAuthenticated() && 
+             firestore.get(/databases/(default)/documents/users/$(request.auth.uid)).data.role in ['admin', 'staff'];
+    }
+    
+    // Vehicle images - public read, staff write
+    match /vehicles/{vehicleId}/{allPaths=**} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+    
+    // Driver licenses - private, user-specific
+    match /licenses/{userId}/{allPaths=**} {
+      allow read: if request.auth.uid == userId || isStaff();
+      allow write: if request.auth.uid == userId;
+    }
+    
+    // Customer documents
+    match /documents/{userId}/{allPaths=**} {
+      allow read: if request.auth.uid == userId || isStaff();
+      allow write: if request.auth.uid == userId;
+    }
+    
+    // Media library - public read, staff write
+    match /media/{allPaths=**} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+    
+    // User avatars
+    match /avatars/{userId} {
+      allow read: if true;
+      allow write: if request.auth.uid == userId;
+    }
+  }
+}
