@@ -1,0 +1,42 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next"
+  },
+  "dependencies": {
+    "@mira-cars/core": "workspace:*",
+    "@mira-cars/sdk": "workspace:*",
+    "@mira-cars/ui": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "next": "^14.2.0",
+    "next-intl": "^3.23.0",
+    "next-themes": "^0.4.6",
+    "firebase": "^11.0.0",
+    "@tanstack/react-query": "^5.61.0",
+    "@tanstack/react-query-devtools": "^5.61.0",
+    "react-hook-form": "^7.55.0",
+    "zod": "^3.22.4",
+    "@hookform/resolvers": "^3.9.0",
+    "framer-motion": "^11.11.17",
+    "date-fns": "^3.6.0",
+    "react-day-picker": "^8.10.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@tailwindcss/postcss": "^4",
+    "tailwindcss": "^4",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.0"
+  }
+}
