@@ -1,0 +1,43 @@
+{
+  "$schema": "https://unpkg.com/knip@latest/schema.json",
+  "workspaces": {
+    ".": {
+      "entry": ["apps/*/src/**/*.{ts,tsx}", "packages/*/src/**/*.{ts,tsx}"],
+      "project": ["apps/**/*.{ts,tsx}", "packages/**/*.{ts,tsx}"]
+    },
+    "apps/web": {
+      "entry": ["src/app/**/*.{ts,tsx}", "src/lib/**/*.{ts,tsx}"],
+      "project": ["src/**/*.{ts,tsx}"]
+    },
+    "apps/mobile": {
+      "entry": ["app/**/*.{ts,tsx}", "src/**/*.{ts,tsx}"],
+      "project": ["app/**/*.{ts,tsx}", "src/**/*.{ts,tsx}"]
+    },
+    "packages/core": {
+      "entry": ["src/index.ts"],
+      "project": ["src/**/*.ts", "tests/**/*.ts"]
+    },
+    "packages/ui": {
+      "entry": ["src/index.ts"],
+      "project": ["src/**/*.{ts,tsx}"]
+    },
+    "packages/sdk": {
+      "entry": ["src/index.ts"],
+      "project": ["src/**/*.ts"]
+    }
+  },
+  "ignore": [
+    "**/*.d.ts",
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.turbo/**"
+  ],
+  "ignoreDependencies": [
+    "@types/*",
+    "typescript",
+    "prettier",
+    "eslint"
+  ]
+}
